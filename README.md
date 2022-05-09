@@ -1,2 +1,2 @@
-# sze_oo_programozas
-Széchenyi István Egyetem // Győr // Objektum Orientált Programozás //
+# Objektum Orientált Programozás
+**Széchenyi István Egyetem // Győr // Objektum Orientált Programozás //**
