@@ -1,0 +1,21 @@
+name: GyakClone
+
+on: [push]
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone supercharge website repository
+      uses: actions/checkout@v3
+
+    # This part here is cloning a second repository
+    # While cloning the repository:
+    #   - it clones the repo into the given `path`
+    #   - it checks out the branch defined at `ref`
+    - name: Clone repository
+      uses: actions/checkout@v3
+      with:
+        repository: https://github.com/csapoadam/oop-gyak-2022-osz
+        path: gyakorlati_orak/csapoadam
