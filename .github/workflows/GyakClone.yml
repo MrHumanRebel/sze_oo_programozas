@@ -8,14 +8,15 @@ jobs:
 
     steps:
     - name: Clone supercharge website repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
 
     # This part here is cloning a second repository
     # While cloning the repository:
     #   - it clones the repo into the given `path`
     #   - it checks out the branch defined at `ref`
     - name: Clone repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
       with:
         repository: csapoadam/oop-gyak-2022-osz
-        path: gyakorlati_orak/csapoadam
+        path: MrHumanRebel/sze_oo_programozas/gyakorlati_orak/csapoadam
+        ref: main
