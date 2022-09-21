@@ -18,13 +18,14 @@ void sor_minta::setIsm(int im)
     {
         cout << "\n Kérem az ismétlődés változtatás mértékét [1-10]: " << im << " +-= ";
         cin >> v_m;
-    } while (((im + v_m) <= 0) && ((im + v_m) <= 10) && ((im + v_m) >= 1));
+    } while (((im + v_m) <= 0) && ((im + v_m) > 10) && ((im + v_m) < 1));
     ism += v_m;
 }
 void sor_minta::setKar(char kr)
 {
     cout << "\n Kérem a karakter változtatást: " << kr << " : ";
     cin >> v_m;
+    kar = '\0';
     kar = v_m;
 }
 void sor_minta::setSor(int sr)
@@ -33,7 +34,7 @@ void sor_minta::setSor(int sr)
     {
         cout << "\n Kérem a sor változtatás mértékét [1-10]: " << sr << " +-= ";
         cin >> v_m;
-    } while (((sr + v_m) <= 0) && ((sr + v_m) <= 10) && ((sr + v_m) >= 1));
+    } while (((sr + v_m) <= 0) && ((sr + v_m) > 10) && ((sr + v_m) < 1));
     sor += v_m;
 }
 
