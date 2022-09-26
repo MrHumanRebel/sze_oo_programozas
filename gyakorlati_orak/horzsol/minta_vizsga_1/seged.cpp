@@ -1,4 +1,4 @@
-#include "Decl.hpp"
+#include "decl.hpp"
 using namespace std;
 
 void tri_race::kiir_rajt(int i, int sum, int sw, int cy, int ru, int de, int co)

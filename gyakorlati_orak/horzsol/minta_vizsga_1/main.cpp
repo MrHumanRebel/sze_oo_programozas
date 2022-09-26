@@ -1,4 +1,4 @@
-#include "1.cpp"
+#include "seged.cpp"
 
 // Csak a main.cpp volt megadva, többit nekünk kell megírni
 
