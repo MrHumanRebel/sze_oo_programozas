@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Decl.hpp"
 
 // Csak a main.cpp volt megadva, többit nekünk kell megírni
