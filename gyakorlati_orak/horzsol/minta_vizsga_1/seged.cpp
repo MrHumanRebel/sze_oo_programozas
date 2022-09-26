@@ -3,10 +3,10 @@ using namespace std;
 
 tri_race &tri_race::kiir_rajt()
 {
-    hour = sum / ora;
-    sec = (sum % ora) / perc;
-    msec = (sum % ora) % perc;
-    cout << "Rajt idő: " << hour << ':' << sec << ':' << msec << " [h:m:s]" << endl;
+    hour = sum / metric_hour;
+    minute = (sum % metric_hour) / metric_min;
+    sec = (sum % metric_hour) % metric_min;
+    cout << "Rajt idő: " << hour << ':' << minute << ':' << sec << " [h:m:s]" << endl;
     cout << "Ú: " << swim << endl;
     cout << "B: " << cycle << endl;
     cout << "F: " << run << endl;
@@ -17,15 +17,15 @@ tri_race &tri_race::kiir_rajt()
 
 tri_race &tri_race::kiir_cel()
 {
-    hour = sum / ora;
-    sec = (sum % ora) / perc;
-    msec = (sum % ora) % perc;
-    cout << "Cél idő: " << hour << ':' << sec << ':' << msec << " [h:m:s]\n"
+    hour = sum / metric_hour;
+    minute = (sum % metric_hour) / metric_min;
+    sec = (sum % metric_hour) % metric_min;
+    cout << "Cél idő: " << hour << ':' << minute << ':' << sec << " [h:m:s]\n"
          << endl;
     return *this;
 }
 
-int tri_race::getIj()
+int tri_race::getIj() const
 {
     return correction; // Idő jóváírás getter
 }

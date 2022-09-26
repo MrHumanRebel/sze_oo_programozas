@@ -13,14 +13,14 @@ private:
     int correction;
     int sum;
     int hour;
+    int minute;
     int sec;
-    int msec;
-    const int ora;
-    const int perc;
+    const int metric_hour;
+    const int metric_min;
 
 public:
     // Alapértelmezett konstruktor + inicializáló lista
-    tri_race() : ora(3600), perc(60)
+    tri_race() : metric_hour(3600), metric_min(60)
     {
         azonosito = "---------";
         swim = 0;
@@ -32,14 +32,14 @@ public:
     }
 
     // Alapérték beállító konstruktor + inicializáló lista
-    tri_race(string az, int sw, int cy, int ru, int de, int com) : ora(3600), perc(60)
+    tri_race(string azonosito, int swim, int cycle, int run, int depo, int correction) : metric_hour(3600), metric_min(60)
     {
-        azonosito = az;
-        swim = sw;
-        cycle = cy;
-        run = ru;
-        depo = de;
-        correction = com;
+        this->azonosito = azonosito;
+        this->swim = swim;
+        this->cycle = cycle;
+        this->run = run;
+        this->depo = depo;
+        this->correction = correction;
     }
 
     // Destruktor
@@ -49,7 +49,7 @@ public:
     }
 
     // Getters
-    int getIj();
+    int getIj() const;
 
     // Setters
     tri_race &setSum(int co);
