@@ -1,23 +1,37 @@
 #include "decl.hpp"
 using namespace std;
 
-void tri_race::kiir_rajt(int i, int sum, int sw, int cy, int ru, int de, int co)
+tri_race &tri_race::kiir_rajt()
 {
-    int h = sum / ora;
-    int p = (sum % ora) / perc;
-    int mp = (sum % ora) % perc;
-    cout << "Rajt idő: " << h << ':' << p << ':' << mp << " [h:m:s]" << endl;
-    cout << "Ú: " << sw << endl;
-    cout << "B: " << cy << endl;
-    cout << "F: " << ru << endl;
-    cout << "D: " << de << endl;
-    cout << "T-: " << co << endl;
+    hour = sum / ora;
+    sec = (sum % ora) / perc;
+    msec = (sum % ora) % perc;
+    cout << "Rajt idő: " << hour << ':' << sec << ':' << msec << " [h:m:s]" << endl;
+    cout << "Ú: " << swim << endl;
+    cout << "B: " << cycle << endl;
+    cout << "F: " << run << endl;
+    cout << "D: " << depo << endl;
+    cout << "T-: " << correction << endl;
+    return *this;
 }
 
-void tri_race::kiir_cel(int i, int sum)
+tri_race &tri_race::kiir_cel()
 {
-    int h = sum / ora;
-    int p = (sum % ora) / perc;
-    int mp = (sum % ora) % perc;
-    cout << "Cél idő: " << h << ':' << p << ':' << mp << " [h:m:s]" << endl;
+    hour = sum / ora;
+    sec = (sum % ora) / perc;
+    msec = (sum % ora) % perc;
+    cout << "Cél idő: " << hour << ':' << sec << ':' << msec << " [h:m:s]" << endl;
+    return *this;
 }
+
+tri_race &tri_race::getIj()
+{
+    return correction; // Idő jóváírás getter
+}
+
+// Setters
+tri_race &tri_race::setSum()
+{
+    sum = swim + cycle + run + depo - correction;
+    return *this;
+};

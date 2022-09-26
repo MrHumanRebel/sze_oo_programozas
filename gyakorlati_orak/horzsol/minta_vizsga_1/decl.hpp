@@ -11,6 +11,10 @@ private:
     int run;
     int depo;
     int correction;
+    int sum;
+    int hour;
+    int sec;
+    int msec;
     const int ora;
     const int perc;
 
@@ -44,21 +48,13 @@ public:
     }
 
     // Getters
-    int getIj() const // Fontos hogy const legyen, ne legyen a művelet után módosítható a memóriában
-    {
-        return correction; // Idő jóváírás getter
-    }
+    tri_race &getIj();
 
     // Setters
-    int setSum(int sw, int cy, int ru, int de, int co) const // Fontos hogy const legyen, ne legyen a művelet után módosítható a memóriában
-    {
-        int sum = sw + cy + ru + de - co;
-        return sum;
-    };
+    tri_race &setSum();
 
     // Kiírások
 
-    void kiir_rajt(int i, int sum, int sw, int cy, int ru, int de, int co); 
-
-    void kiir_cel(int i, int sum);
+    tri_race &kiir_rajt();
+    tri_race &kiir_cel();
 };
