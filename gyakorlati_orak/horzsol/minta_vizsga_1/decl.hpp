@@ -5,7 +5,7 @@ class tri_race
 {
 private:
     // Alap változó lista
-    char azonosito;
+    string azonosito;
     int swim;
     int cycle;
     int run;
@@ -28,17 +28,18 @@ public:
         run = 0;
         depo = 0;
         correction = 0;
+        sum = 0;
     }
 
     // Alapérték beállító konstruktor + inicializáló lista
-    tri_race(char az, int sw, int cy, int ru, int de, int co) : ora(3600), perc(60)
+    tri_race(string az, int sw, int cy, int ru, int de, int com) : ora(3600), perc(60)
     {
         azonosito = az;
         swim = sw;
         cycle = cy;
         run = ru;
         depo = de;
-        correction = co;
+        correction = com;
     }
 
     // Destruktor
@@ -48,10 +49,10 @@ public:
     }
 
     // Getters
-    tri_race &getIj();
+    int getIj();
 
     // Setters
-    tri_race &setSum();
+    tri_race &setSum(int co);
 
     // Kiírások
 
