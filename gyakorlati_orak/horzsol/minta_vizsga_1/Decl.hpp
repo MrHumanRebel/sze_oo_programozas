@@ -58,7 +58,7 @@ public:
 
     // Kiírások
 
-    void kiir_rajt(int i, int sum, int sw, int cy, int ru, int de, int co) const; // Fontos hogy const legyen, ne legyen a művelet után módosítható a memóriában
+    void kiir_rajt(int i, int sum, int sw, int cy, int ru, int de, int co); 
 
-    void kiir_cel(int i, int sum) const; // Fontos hogy const legyen, ne legyen a művelet után módosítható a memóriában
+    void kiir_cel(int i, int sum);
 };
