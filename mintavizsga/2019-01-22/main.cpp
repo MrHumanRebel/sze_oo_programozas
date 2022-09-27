@@ -5,56 +5,61 @@
 #define PLUS3 0
 
 // adjon hozza tovabbi include-okat, ha kell
-#include "vehicles.h"
-#include "parts.h"
+#include "megoldas/csapo/vehicles.h"
+#include "megoldas/csapo/parts.h"
 
 int main()
 {
-    // Vehicle v;
-	// absztrakt osztaly, nem megy!!
+  // Vehicle v;
+  // absztrakt osztaly, nem megy!!
 
-	Vehicle* c1 = new Car("Oliver's Ferrari");
-    Vehicle* c2 = new Car("Erno's Porsche");
-    Vehicle* c3 = new Car("Adam's Mercedes");
-    Vehicle* mb1 = new MotorBike("Mate's Harley");
+  Vehicle *c1 = new Car("Oliver's Ferrari");
+  Vehicle *c2 = new Car("Erno's Porsche");
+  Vehicle *c3 = new Car("Adam's Mercedes");
+  Vehicle *mb1 = new MotorBike("Mate's Harley");
 
-	c1->addPart(new Part("Air conditioner", 2));
-    c2->addPart(new Part("Engine", 6));
-    c3->addPart(new Part("Piston", 7));
-    c3->addPart(new Part("Spark plug", 3));
+  c1->addPart(new Part("Air conditioner", 2));
+  c2->addPart(new Part("Engine", 6));
+  c3->addPart(new Part("Piston", 7));
+  c3->addPart(new Part("Spark plug", 3));
 
-	VehiclePark vehiclepark;
-	vehiclepark.addVehicle(c1);
-	vehiclepark.addVehicle(c2);
+  VehiclePark vehiclepark;
+  vehiclepark.addVehicle(c1);
+  vehiclepark.addVehicle(c2);
 
+  vehiclepark.amortize();
+  std::cout << "After 1 year:\n";
+  vehiclepark.printVehicles();
+
+  vehiclepark.addVehicle(c3);
+  vehiclepark.addVehicle(mb1);
+
+  for (int y = 2; y < 10; ++y)
+  {
     vehiclepark.amortize();
-    std::cout << "After 1 year:\n";
+    std::cout << "After " << y << " years:\n";
     vehiclepark.printVehicles();
-
-	vehiclepark.addVehicle(c3);
-	vehiclepark.addVehicle(mb1);
-
-    for (int y = 2; y < 10; ++y) {
-        vehiclepark.amortize();
-        std::cout << "After " << y << " years:\n";
-        vehiclepark.printVehicles();
-        if (y == 6) vehiclepark.repairCars();
-        else if (y == 7) vehiclepark.repairBikes();
+    if (y == 6)
+      vehiclepark.repairCars();
+    else if (y == 7)
+      vehiclepark.repairBikes();
 #if PLUS1
-        else if (y == 8) vehiclepark.repairVehicles<Vehicle>();
+    else if (y == 8)
+      vehiclepark.repairVehicles<Vehicle>();
 #endif
-    }
+  }
 
 #if PLUS3
-    VehiclePark parkcopy{ vehiclepark }, another = vehiclepark;
+  VehiclePark parkcopy{vehiclepark}, another = vehiclepark;
 #else
-    for (auto obj : { c1, c2, c3, mb1 }) delete obj;
+  for (auto obj : {c1, c2, c3, mb1})
+    delete obj;
 #endif
 
-    std::cout << "\nPress Enter to exit...\n";
-    std::cin.get();
+  std::cout << "\nPress Enter to exit...\n";
+  std::cin.get();
 
-    return 0;
+  return 0;
 }
 
 // Pelda kimenet
