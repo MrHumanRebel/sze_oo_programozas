@@ -1,8 +1,9 @@
-# Termékek
+# 2020-01-08
 
 ## 2-es jegyért
 
 Készítsen programot mobiltelefonok és laptopok leltári nyilvántartására az alábbiak szerint:
+
 - a `Laptop` és `Mobil` objektumok egyfajta `Termek`ek
 - a `Laptop` példányosításakor meg kell adni a laptop nevét és árát
 - a `Mobil` példányosításakor meg kell adni a mobil nevét, árát és IMEI számát
@@ -10,6 +11,7 @@ Készítsen programot mobiltelefonok és laptopok leltári nyilvántartására a
 ### `Keszlet` osztály
 
 A `Keszlet` osztály úgynevezett singleton osztály:
+
 - konstruktorát kívülről nem lehet meghívni
 - copy konstruktor és assignment le van tiltva
 - kizárólag a `GetInstance()` nevű statikus metóduson keresztül kérhető le egy példánya
