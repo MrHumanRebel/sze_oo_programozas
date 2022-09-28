@@ -1,5 +1,5 @@
 # Objektum Orientált Programozás
-**Széchenyi István Egyetem // Győr // Objektum Orientált Programozás //**
+**Széchenyi István Egyetem // Győr // Objektum Orientált Programozás // GKNB_INTM085**
 
 <img src="docs/c++_oo.jpg" alt="Programozás" width="200" height="177">
 
