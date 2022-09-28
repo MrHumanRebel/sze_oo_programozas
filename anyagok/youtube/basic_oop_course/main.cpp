@@ -68,12 +68,29 @@ public:
         cout << Name << " is checking e-mail, task backlog, performing tasks..." << endl;
     }
 
-    // Constructor
+    /*
+    // Constructor V1
     Employee(string name, string company, int age)
     {
         Name = name;
         Company = company;
         Age = age;
+    }
+    */
+
+    // Constructor V2
+    Employee(string Name, string Company, int Age) // With ->this operator, the variable names can be the same for a cleaner code
+    {
+        this->Name = Name;
+        this->Company = Company;
+        this->Age = Age;
+    }
+    // Default Constructor
+    Employee()
+    {
+        Name = "No record found!";
+        Company = "No record found!";
+        Age = 0;
     }
 
     // Destructor
@@ -175,6 +192,11 @@ int main()
 
     e1->work(); // Pointer to work function
     e2->work();
+
+    cout << endl;
+    cout << "Default constructor: " << endl;
+    Employee base;
+    base.introduction();
 
     /*employee1.setAge(39);
     employee1.setAge(15); // Not going to work => setter conditions
