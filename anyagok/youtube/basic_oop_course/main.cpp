@@ -194,4 +194,5 @@ int main()
     employee2.Age = 20;
     employee2.introduction();
     */
+    return 0;
 }
