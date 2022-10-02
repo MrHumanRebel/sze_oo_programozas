@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <cmath>
 
 using namespace std;
+#define filename "/home/szeke/projects/sze_oo_programozas/anyagok/youtube/skandi/data.txt"
 
 int random(int tol, int ig)
 {
@@ -13,14 +13,13 @@ int random(int tol, int ig)
 
 int weightrand(double Weight[]) // https://stackoverflow.com/questions/1761626/weighted-random-numbers
 {
-    int sum_of_weight = 0;
+    double sum_of_weight = 0.0;
     for (int i = 1; i <= 35; i++)
     {
         sum_of_weight += Weight[i];
     }
-    cout << "Weight sum: " << sum_of_weight << endl;
-    int rnd = random(0, sum_of_weight);
-    cout << "Rand gen: " << rnd << endl;
+    double rnd = random(0, sum_of_weight);
+    // cout << "Rand gen: " << rnd << endl;
     for (int i = 1; i <= 35; i++)
     {
         if (rnd < Weight[i])
@@ -31,20 +30,17 @@ int weightrand(double Weight[]) // https://stackoverflow.com/questions/1761626/w
 int main()
 {
     // Initialize random generator
-    int seed = rand();
+    int seed = random(100, 1000);
     srand(time(NULL) + seed);
 
-    // Define variables
-    string filename = "/home/szeke/projects/sze_oo_programozas/anyagok/youtube/skandi/testdata.txt";
-
     // Define arrays
-    int firstPlace[3500];
-    int secondPlace[3500];
-    int thirdPlace[3500];
-    int fourthPlace[3500];
-    int fifthPlace[3500];
-    int sixthPlace[3500];
-    int seventhPlace[3500];
+    int firstPlace[2500];
+    int secondPlace[2500];
+    int thirdPlace[2500];
+    int fourthPlace[2500];
+    int fifthPlace[2500];
+    int sixthPlace[2500];
+    int seventhPlace[2500];
     //##################################################################################################################
 
     // File read
@@ -248,7 +244,7 @@ int main()
     double sixthWeight[35];
     double seventhWeight[35];
 
-    for (int i = 0; i < 35; i++)
+    for (int i = 1; i <= 35; i++)
     {
         firstWeight[i] = 0.0;
         secondWeight[i] = 0.0;
@@ -266,7 +262,7 @@ int main()
     {
 
         firstWeight[currentvalue] = (firstCounter[currentvalue] * 1.0) / i1;
-        cout << "At " << currentvalue << " the weight: " << firstWeight[currentvalue] << endl;
+        // cout << "At " << currentvalue << " the weight: " << firstWeight[currentvalue] << endl;
         secondWeight[currentvalue] = (secondCounter[currentvalue] * 1.0) / i2;
         thirdWeight[currentvalue] = (thirdCounter[currentvalue] * 1.0) / i3;
         fourthWeight[currentvalue] = (fourthCounter[currentvalue] * 1.0) / i4;
@@ -279,8 +275,58 @@ int main()
     // Random logic
 
     cout << "Total draws: " << i7 << endl;
+
+    int secondRand = 0;
+    int thirdRand = 0;
+    int fourthRand = 0;
+    int fifthRand = 0;
+    int sixthRand = 0;
+    int seventhRand = 0;
+
     int firstRand = weightrand(firstWeight);
-    cout << "First rand num: " << firstRand << endl;
+    cout << "first rand num: " << firstRand << endl;
+
+    do
+    {
+        secondRand = weightrand(secondWeight);
+        seed += random(1000, 2000);
+    } while (secondRand < firstRand);
+    cout << "second rand num: " << secondRand << endl;
+
+    do
+    {
+        thirdRand = weightrand(thirdWeight);
+        seed += random(3000, 4000);
+    } while (thirdRand < secondRand);
+    cout << "third rand num: " << thirdRand << endl;
+
+    do
+    {
+        fourthRand = weightrand(fourthWeight);
+        seed += random(4000, 5000);
+    } while (fourthRand < thirdRand);
+    cout << "fourth rand num: " << fourthRand << endl;
+
+    do
+    {
+        fifthRand = weightrand(fifthWeight);
+        seed += random(5000, 6000);
+    } while (fifthRand < fourthRand);
+    cout << "fifth rand num: " << fifthRand << endl;
+
+    do
+    {
+        sixthRand = weightrand(sixthWeight);
+        seed += random(6000, 7000);
+    } while (sixthRand < fifthRand);
+    cout << "sixth rand num: " << sixthRand << endl;
+
+    do
+    {
+        seventhRand = weightrand(seventhWeight);
+        seed += random(7000, 8000);
+    } while (seventhRand < sixthRand);
+    cout << "seventh rand num: " << seventhRand << endl;
 
     return 0;
 }
