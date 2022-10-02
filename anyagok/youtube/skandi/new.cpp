@@ -5,9 +5,11 @@
 
 using namespace std;
 #define filename "/home/szeke/projects/sze_oo_programozas/anyagok/youtube/skandi/data.txt"
+int seed = 100;
 
 int random(int tol, int ig)
 {
+    srand(time(NULL) + seed);
     return (tol + rand() % (ig - tol + 1));
 }
 
@@ -19,7 +21,7 @@ int weightrand(double Weight[]) // https://stackoverflow.com/questions/1761626/w
         sum_of_weight += Weight[i];
     }
     double rnd = random(0, sum_of_weight);
-    // cout << "Rand gen: " << rnd << endl;
+    cout << "Rand gen... " << endl;
     for (int i = 1; i <= 35; i++)
     {
         if (rnd < Weight[i])
@@ -29,10 +31,6 @@ int weightrand(double Weight[]) // https://stackoverflow.com/questions/1761626/w
 }
 int main()
 {
-    // Initialize random generator
-    int seed = random(100, 1000);
-    srand(time(NULL) + seed);
-
     // Define arrays
     int firstPlace[2500];
     int secondPlace[2500];
