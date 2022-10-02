@@ -5,31 +5,9 @@
 #include <cmath>
 
 using namespace std;
-int seed = 5000;
-
-int toint(string str)
-{
-    bool negativ = (str[0] == '-');
-    int szam = 0;
-    for (size_t i = negativ; i < str.length(); i++)
-    {
-        if ((int)(str[i]) - 48 >= 0 && (int)(str[i]) - 48 <= 9)
-        {
-            szam += (int)(((int)(str[i])) - (int)48) * pow(10, str.length() - i - (int)1);
-        }
-        else
-        {
-            szam = 0;
-            break;
-        }
-    }
-    szam -= (int)negativ * szam * 2;
-    return szam;
-}
 
 int random(int tol, int ig)
 {
-
     return (tol + rand() % (ig - tol + 1));
 }
 
@@ -53,6 +31,7 @@ int weightrand(double Weight[]) // https://stackoverflow.com/questions/1761626/w
 int main()
 {
     // Initialize random generator
+    int seed = rand();
     srand(time(NULL) + seed);
 
     // Define variables
@@ -89,6 +68,7 @@ int main()
             for (long unsigned int j = 0; j < aktSor.length(); j++)
             {
                 string akt = "\0";
+                bool ok = false;
 
                 if (placecounter == 6)
                 {
@@ -102,6 +82,7 @@ int main()
                     {
                         akt += aktSor[j];
                         placecounter++;
+                        ok = true;
                         // cout << "Single digit" << endl;
                     }
                 }
@@ -115,49 +96,53 @@ int main()
                         akt += aktSor[j + 1];
                         placecounter++;
                         j++;
+                        ok = true;
                         // cout << "Two digits" << endl;
                     }
                 }
 
-                int value = toint(akt);
+                if (ok == true)
+                {
+                    int value = stoi(akt);
 
-                if (placecounter == 0 && value != 0)
-                {
-                    firstPlace[i1] = value;
-                    i1++;
+                    if (placecounter == 0 && value != 0)
+                    {
+                        firstPlace[i1] = value;
+                        i1++;
+                    }
+                    if (placecounter == 1 && value != 0)
+                    {
+                        secondPlace[i2] = value;
+                        i2++;
+                    }
+                    if (placecounter == 2 && value != 0)
+                    {
+                        thirdPlace[i3] = value;
+                        i3++;
+                    }
+                    if (placecounter == 3 && value != 0)
+                    {
+                        fourthPlace[i4] = value;
+                        i4++;
+                    }
+                    if (placecounter == 4 && value != 0)
+                    {
+                        fifthPlace[i5] = value;
+                        i5++;
+                    }
+                    if (placecounter == 5 && value != 0)
+                    {
+                        sixthPlace[i6] = value;
+                        i6++;
+                    }
+                    if (placecounter == 6 && value != 0)
+                    {
+                        seventhPlace[i7] = value;
+                        i7++;
+                    }
+                    // cout << firstPlace[i1-1] << "\t" << secondPlace[i2-1] << "\t" << thirdPlace[i3-1] << "\t" << fourthPlace[i4-1] << "\t" << fifthPlace[i5-1] << "\t" << sixthPlace[i6-1] << "\t" << seventhPlace[i7-1] << "\t" << endl;
+                    total++;
                 }
-                if (placecounter == 1 && value != 0)
-                {
-                    secondPlace[i2] = value;
-                    i2++;
-                }
-                if (placecounter == 2 && value != 0)
-                {
-                    thirdPlace[i3] = value;
-                    i3++;
-                }
-                if (placecounter == 3 && value != 0)
-                {
-                    fourthPlace[i4] = value;
-                    i4++;
-                }
-                if (placecounter == 4 && value != 0)
-                {
-                    fifthPlace[i5] = value;
-                    i5++;
-                }
-                if (placecounter == 5 && value != 0)
-                {
-                    sixthPlace[i6] = value;
-                    i6++;
-                }
-                if (placecounter == 6 && value != 0)
-                {
-                    seventhPlace[i7] = value;
-                    i7++;
-                }
-                // cout << firstPlace[i1-1] << "\t" << secondPlace[i2-1] << "\t" << thirdPlace[i3-1] << "\t" << fourthPlace[i4-1] << "\t" << fifthPlace[i5-1] << "\t" << sixthPlace[i6-1] << "\t" << seventhPlace[i7-1] << "\t" << endl;
-                total++;
             }
         }
     }
@@ -255,7 +240,6 @@ int main()
     //##################################################################################################################
 
     // Weight initilize
-    // Counter initialize
     double firstWeight[35];
     double secondWeight[35];
     double thirdWeight[35];
@@ -266,13 +250,13 @@ int main()
 
     for (int i = 0; i < 35; i++)
     {
-        firstWeight[i] = 0;
-        secondWeight[i] = 0;
-        thirdWeight[i] = 0;
-        fourthWeight[i] = 0;
-        fifthWeight[i] = 0;
-        sixthWeight[i] = 0;
-        seventhWeight[i] = 0;
+        firstWeight[i] = 0.0;
+        secondWeight[i] = 0.0;
+        thirdWeight[i] = 0.0;
+        fourthWeight[i] = 0.0;
+        fifthWeight[i] = 0.0;
+        sixthWeight[i] = 0.0;
+        seventhWeight[i] = 0.0;
     }
     //##################################################################################################################
 
@@ -281,14 +265,14 @@ int main()
     for (int currentvalue = 1; currentvalue <= 35; currentvalue++)
     {
 
-        firstWeight[currentvalue] = firstCounter[currentvalue] / i1;
+        firstWeight[currentvalue] = (firstCounter[currentvalue] * 1.0) / i1;
         cout << "At " << currentvalue << " the weight: " << firstWeight[currentvalue] << endl;
-        secondWeight[currentvalue] = secondCounter[currentvalue] / i2;
-        thirdWeight[currentvalue] = thirdCounter[currentvalue] / i3;
-        fourthWeight[currentvalue] = fourthCounter[currentvalue] / i4;
-        fifthWeight[currentvalue] = fifthCounter[currentvalue] / i5;
-        sixthWeight[currentvalue] = sixthCounter[currentvalue] / i6;
-        seventhWeight[currentvalue] = seventhCounter[currentvalue] / i7;
+        secondWeight[currentvalue] = (secondCounter[currentvalue] * 1.0) / i2;
+        thirdWeight[currentvalue] = (thirdCounter[currentvalue] * 1.0) / i3;
+        fourthWeight[currentvalue] = (fourthCounter[currentvalue] * 1.0) / i4;
+        fifthWeight[currentvalue] = (fifthCounter[currentvalue] * 1.0) / i5;
+        sixthWeight[currentvalue] = (sixthCounter[currentvalue] * 1.0) / i6;
+        seventhWeight[currentvalue] = (seventhCounter[currentvalue] * 1.0) / i7;
     }
     //##################################################################################################################
 
