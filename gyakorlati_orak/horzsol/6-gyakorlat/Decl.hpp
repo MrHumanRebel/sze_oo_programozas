@@ -1,5 +1,7 @@
-using namespace std;
 #pragma once
+#include <iostream>
+
+using namespace std;
 
 class sor_minta /* Osztály deklarációja */
 {
@@ -7,7 +9,6 @@ private:
     char kar; /* kiirandó karakter */
     int ism;  /* soron belüli ismétlődések száma */
     int sor;  /* sorok száma, amennyiben megjelenjen */
-
 public:
     sor_minta()
     {
@@ -39,14 +40,14 @@ public:
     dm_kiir() : sK(4) /* Alapértelmezett konstruktor + inicializáló lista  */
     {
         mutat = new sor_minta();
-        /*cout << "Az alapértelmezett objektumot létrehoztam: ";
+        /*cout << "Az alapértelmezett objektum címe: ";
         cout << mutat << endl;*/
     }
     dm_kiir(char kr, int im, int sr) : sK(4) /* Alapérték beállító konstruktor + inicializáló lista */
     {
         mutat = new sor_minta(kr, im, sr);
-        /*cout << "A paraméteres objektumot létrehoztam: ";
-        cout << mutat << endl; */
+        /*cout << "A paraméteres objektum címe: ";
+        cout << mutat << endl;*/
     }
     void kiir(int i) const;
     int getsK() const { return sK; }
@@ -54,7 +55,7 @@ public:
     ~dm_kiir() /* Destruktor */
     {
         delete mutat;
-        /*cout << "Az objektum törlést elvégeztem: ";
-        cout << mutat << endl; */
+        /*cout << "Felszabadítottam az objektum memóriacímét, amely a: ";
+        cout << mutat << endl;*/
     }
 };
