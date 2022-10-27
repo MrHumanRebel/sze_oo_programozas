@@ -6,9 +6,11 @@ class YouTubeChannel
 {
 private:
     string Name;
-    string OwnerName;
     int SubscribersCount;
     list<string> PublishedVideoTitles;
+
+protected:
+    string OwnerName;
 
 public:
     YouTubeChannel(string name, string ownerName)
@@ -43,8 +45,30 @@ public:
     }
 };
 
+class MacskaYTChannel : public YouTubeChannel // Derived class
+{
+public:
+    MacskaYTChannel(string name, string ownername) : YouTubeChannel(name, ownername)
+    {
+    }
+    void Practice()
+    {
+        cout << OwnerName << " Macska macskagol a kutya kutyagolasan....";
+    }
+};
+
 int main()
 {
+    MacskaYTChannel Macska_YT("Danci Studios", "Daniel");
+    Macska_YT.PublishVideo("Macska Ugatas");
+    Macska_YT.PublishVideo("Kutya Nyavogas");
+    for (int i = 0; i <= 50; i++)
+    {
+        Macska_YT.Subscribe();
+    }
+    Macska_YT.Unsubscribe();
+    Macska_YT.GetInfo();
+    Macska_YT.Practice();
 
-    system("pause>0");
+    return 0;
 }
