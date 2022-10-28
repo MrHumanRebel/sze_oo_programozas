@@ -76,7 +76,7 @@ public:
     // Disable copy Constructor
     Rectangle &operator=(const Rectangle &) = delete;
     Rectangle(const Rectangle &) = delete;
-    // Rectangle() = default;
+    Rectangle() = delete;
 
     float area()
     {
@@ -90,7 +90,6 @@ public:
         calc = egyikoldalhossz * masikoldalhossz;
         return abs(calc);
     }
-    Rectangle() = delete;
 };
 
 class Circle : public Point2D
@@ -114,7 +113,7 @@ public:
     // Disable copy Constructor
     Circle &operator=(const Circle &) = delete;
     Circle(const Circle &) = delete;
-    // Circle() = default;
+    Circle() = delete;
     float area()
     {
         float calc = M_PI * pow(b, 2);
