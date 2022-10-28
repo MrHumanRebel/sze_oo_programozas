@@ -4,10 +4,11 @@
 #include <iostream>
 #include <type_traits>
 
-#include "megoldas/csapo/shapes.h"
+#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2021-12-14/megoldas_dani.hpp"
+//#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2021-12-14/megoldas/csapo/shapes.h"
 
 #define SZINT_2 1
-#define SZINT_3 0
+#define SZINT_3 1
 #define SZINT_4 0
 #define SZINT_5 0
 
