@@ -152,8 +152,28 @@ ostream &operator<<(ostream &COUT, Sports &Sports) // Overloading << operator
 
 void printAverages(vector<Sports *> allSports)
 {
-    for (long unsigned i = 0; i < 3; i++)
+    for (long unsigned i = 0; i < allSports.size(); i++)
     {
         cout << *allSports[i];
+    }
+}
+
+void printNamesOfSports(vector<Sports *> allSports)
+{
+    cout << endl;
+    for (long unsigned i = 0; i < allSports.size(); i++)
+    {
+        if (allSports[i]->getSwim())
+        {
+            cout << "Uszas" << endl;
+        };
+        if (allSports[i]->getCycle())
+        {
+            cout << "Kerekpar" << endl;
+        };
+        if (allSports[i]->getRun())
+        {
+            cout << "Futas" << endl;
+        };
     }
 }
