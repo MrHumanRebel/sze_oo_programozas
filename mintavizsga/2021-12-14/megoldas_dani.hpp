@@ -22,6 +22,21 @@ public:
     {
         return areaCirc;
     }
+
+    int cornerRect()
+    {
+        return 4;
+    }
+
+    int cornerCirc()
+    {
+        return 0;
+    }
+
+    // Virtual destructor
+    virtual ~Shape()
+    {
+    }
 };
 
 class Point2D : public Shape
@@ -188,3 +203,12 @@ public:
             return false;
     }
 };
+
+// Corners
+int getSarkokSzama(Shape *s1)
+{
+    if (s1->getAreaCirc())
+        return s1->cornerCirc();
+    if (s1->getAreaRect())
+        return s1->cornerRect();
+}
