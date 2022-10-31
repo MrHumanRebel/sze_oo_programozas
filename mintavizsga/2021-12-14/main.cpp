@@ -9,7 +9,7 @@
 
 #define SZINT_2 1
 #define SZINT_3 1
-#define SZINT_4 0
+#define SZINT_4 1
 #define SZINT_5 0
 
 int main()
