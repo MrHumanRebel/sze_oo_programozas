@@ -59,8 +59,8 @@ int main()
     sp2->computeSaveAndPrintAverage();
     sp3->computeSaveAndPrintAverage();
 
-    /*vector<Sports*> allSports = { sp1, sp2, sp3 };//HÁRMASÉRT
-     printAverages(allSports);*/
+    vector<Sports*> allSports = { sp1, sp2, sp3 };//HÁRMASÉRT
+     printAverages(allSports);
 
     /* vector<Sports* > allSports = {sp1, sp2, sp3};//NÉGYESÉRT
      printNamesOfSports(allSports);  */
