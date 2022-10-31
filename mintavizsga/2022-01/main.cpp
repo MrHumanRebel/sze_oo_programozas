@@ -3,8 +3,8 @@
 #include <vector>
 using namespace std;
 
-#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dorian.hpp"
-//#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dani.hpp"
+//#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dorian.hpp"
+#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dani.hpp"
 
 /* ####Kettesért####
 Keszitse el a "Sports(distance, time)", "Swimming(distance,time)", "Cycling(distance,time)", "Running(distance,time)" osztalyokat ugy, hogy az alabbi kod forduljon.
@@ -59,7 +59,7 @@ int main()
     sp2->computeSaveAndPrintAverage();
     sp3->computeSaveAndPrintAverage();
 
-    /* vector<Sports*> allSports = { sp1, sp2, sp3 };//HÁRMASÉRT
+    /*vector<Sports*> allSports = { sp1, sp2, sp3 };//HÁRMASÉRT
      printAverages(allSports);*/
 
     /* vector<Sports* > allSports = {sp1, sp2, sp3};//NÉGYESÉRT

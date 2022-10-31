@@ -6,7 +6,7 @@ using namespace std;
 class Shape
 {
 public:
-    virtual float area() = 0;
+    virtual double area() = 0;
 };
 
 class Point2D : public Shape
@@ -33,11 +33,11 @@ public:
     {
         // cout << "\nDestructor OK!" << endl;
     }
-    float distance(Point2D ujpont)
+    double distance(Point2D ujpont)
     {
         return sqrt((b - a) ^ 2 + (ujpont.b - ujpont.a) ^ 2);
     }
-    float area()
+    double area()
     {
         return 0.0;
     }
@@ -78,9 +78,9 @@ public:
     Rectangle(const Rectangle &) = delete;
     Rectangle() = delete;
 
-    float area()
+    double area()
     {
-        float calc;
+        double calc;
         int id1 = a.getA();
         int id2 = d.getA();
         int egyikoldalhossz = id2 - id1;
@@ -114,9 +114,9 @@ public:
     Circle &operator=(const Circle &) = delete;
     Circle(const Circle &) = delete;
     Circle() = delete;
-    float area()
+    double area()
     {
-        float calc = M_PI * pow(b, 2);
+        double calc = M_PI * pow(b, 2);
         return calc;
     }
 };
