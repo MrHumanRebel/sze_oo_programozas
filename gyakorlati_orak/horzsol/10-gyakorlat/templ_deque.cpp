@@ -1,64 +1,101 @@
-http://www.cplusplus.com/reference/
-Templ/<deque>
+https : // cplusplus.com/reference/stl/
+		Templ /
+		<deque>
 /********* Decl.hpp ************/
-using namespace std;
-
-deque<int> hpmp(3);
-deque<int>::iterator ke; /* un. "bejárók", az elemek címzéséhez */
-
-/* komparátor/predikátum (összehasonlító/tulajdonság hozzárendelő) függvény */
-bool hasonlit(int i, int j) { return i>j; } 
-bool szuro (int i) { return ((i%2)==1 || (i%2)==-1); }
-bool szuro2 (int i) { return ((i%2)==0 && i!=0); }
-
-/***************************************************************************************/
 #include <iostream>
 #include <deque>
 #include <algorithm>
+
+		using namespace std;
+
+deque<int> hpmp(3);
+deque<int>::iterator ke; // un. "bejárók", az elemek címzéséhez
+
+// komparátor/predikátum (összehasonlító/tulajdonság hozzárendelő) függvény
+bool hasonlit(int i, int j) { return i < j; }
+bool szuro(int i) { return ((i % 2) == 1 or (i % 2) == -1); }
+bool szuro2(int i) { return ((i % 2) == 0 and i != 0); }
+
+/***************************************************************************************/
 #include "Decl.hpp"
- 
+
 int main(void)
 {
+	int i;
 	hpmp[0] = -1;
 	hpmp.push_back(6);
-	for (int i = 0; i < 10; i++)
-	 { cout << hpmp[i] << " "; hpmp.push_back(7 + i);	}
+	for (i = 0; i < 10; i++)
+	{
+		cout << hpmp[i] << " ";
+		hpmp.push_back(7 + i);
+	}
 	cout << "\n";
-	for (auto it : hpmp) { cout << it << " "; }
-	cout << "\n" << hpmp.size() << "\n";
+	for (i = 0; i < hpmp.size(); i++)
+	{
+		cout << hpmp[i] << " ";
+	}
+	cout << "\n\n"
+		 << hpmp.size() << "\n";
 	hpmp.pop_back();
-	hpmp.pop_front(); hpmp.push_front(-2);
-	cout << "\n" << hpmp.size() << "\n";
+	hpmp.pop_front();
+	hpmp.push_front(-3); // deque: x.pop/.push_front();
+	cout << "\n"
+		 << hpmp.size() << "\n";
 	hpmp.resize(19);
-	for (auto it : hpmp)
-	 { cout << it << " ";	} cout << "\n";
+	for (i = 0; i < hpmp.size(); i++)
+	{
+		cout << hpmp[i] << " ";
+	}
+	cout << "\n";
 	hpmp.push_back(20);
-	for (auto it : hpmp) { cout << it /*&it*/ << " "; } cout << "\n";
-	//for(it = --hpmp.end(); it != --hpmp.begin(); it--) { cout << *it << " "; }
-	for (deque<int>::reverse_iterator r_it = hpmp.rbegin(); r_it != hpmp.rend(); r_it++)
-	 { cout << *r_it << " "; }  cout << "\n";
+	for (auto it = hpmp.begin(); it != hpmp.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << "\n";
+	for (deque<int>::reverse_iterator it = hpmp.rbegin(); it != hpmp.rend(); it++)
+	{
+		cout << *it << " ";
+	}
 	sort(hpmp.begin(), hpmp.end(), hasonlit);
-	for (auto it : hpmp) { cout << it << " "; }
-	sort(hpmp.begin(), hpmp.end()); cout << "\n";
-	for (auto it : hpmp) { cout << it << " "; } cout << "\n";
-	hpmp.insert(hpmp.begin()+4,42);
-	hpmp.insert(hpmp.end(),2,42);
-	for (auto it : hpmp) { cout << it << " "; } cout << "\n";
-	hpmp.insert(hpmp.begin(), hpmp.begin()+10, hpmp.begin()+16);
-	for (auto it : hpmp) { cout << it << " "; } cout << "\n";
+	cout << "\n";
+	for (auto it = hpmp.cbegin(); it != hpmp.cend(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << "\n";
+	hpmp.insert(hpmp.begin() + 4 /*,4*/, 42);
+	hpmp.insert(hpmp.end() - 2 /*,2*/, 42);
+	// hpmp.insert(hpmp.begin(),hpmp.begin()+9,hpmp.begin()+15);
+	for (auto it : hpmp)
+	{
+		cout << it << " ";
+	}
+	cout << "\n";
+	// remove(hpmp.begin(), hpmp.end(), 0); // NINCS törlés!
+	// remove_if(hpmp.begin(), hpmp.end(), szuro); // NINCS törlés!
+	// hpmp.erase((remove(hpmp.begin(), hpmp.end(), 0)),hpmp.end());
 	hpmp.erase((remove_if(hpmp.begin(), hpmp.end(), szuro)), hpmp.end());
-	for (auto it : hpmp) { cout << it << " "; } cout << "\n";
-	ke = find(hpmp.begin(), hpmp.end(), 0);
-	if (ke != hpmp.end()) cout << /*&*/(*ke) << "\n";
+	for (auto it : hpmp)
+	{
+		cout << it << " ";
+	}
+	cout << "\n";
+	ke = find(hpmp.begin(), hpmp.end(), 20);
+	if (ke != hpmp.end())
+		cout << *ke << "\n\n";
 	cout << *max_element(hpmp.begin(), hpmp.end(), hasonlit) << "\n";
 	cout << *min_element(hpmp.begin(), hpmp.end(), hasonlit) << "\n";
 	cout << *minmax_element(hpmp.begin(), hpmp.end()).first << "\n";
-	cout << *minmax_element(hpmp.begin(), hpmp.end()).second << "\n";
-	cout << count(hpmp.begin(), hpmp.end(), 0) << "\n";
+	cout << *minmax_element(hpmp.begin(), hpmp.end()).second << "\n\n";
+	cout << count(hpmp.begin(), hpmp.end(), 0) << endl;
 	cout << count_if(hpmp.begin(), hpmp.end(), szuro2) << "\n";
 	hpmp.clear();
-	cout << "\n" << hpmp.size() << "\n";
-	if (hpmp.empty()) cout << "Üres a kétvégű sor!\n";
+	cout << "\n"
+		 << hpmp.size() << "\n";
+	if (hpmp.empty())
+		cout << "Üres a kétvégű sor!\n";
 	return 0;
 }
+
 /***************************************************************************************/

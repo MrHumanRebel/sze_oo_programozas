@@ -417,6 +417,7 @@ void felsz(tri_race *x_tri)
 {
   delete x_tri;
   cout << x_tri << endl;
+  x_tri = 0;
 }
 
 /********* main.cpp ************/
@@ -451,7 +452,7 @@ int main(void)
   return 0;
 }
 /***************************************************************************************/
-din_cast / pointer - rel, kiir_rajt() kiváltással, absztrakt osztály
+din_cast / pointer - rel, kiir_rajt() kiváltással, ős - szülő pointer - ek(!!!), absztrakt osztály
 /********* Decl.hpp ************/
 #pragma once
 #include <iostream>
@@ -631,6 +632,7 @@ void felsz(tri_race *x_tri)
 {
   delete x_tri;
   cout << x_tri << endl;
+  x_tri = 0;
 }
 
 /********* main.cpp ************/
@@ -646,10 +648,10 @@ int main(void)
   cout << "B_tri = " << B_tri << endl;
   tri_race *C_tri = new tri_race("B_G_9048", 1400, 4400, 2400, 130, 90);
   cout << "C_tri = " << C_tri << endl;
-  in_ch *D_tri = new in_ch("C_H_1234", 1450, 4400, 2400, 130, 30, 5);
-  cout << "D_tri = " << D_tri << endl;
-  in_gr_ch *E_tri = new in_gr_ch("G_R_4321", 1500, 4450, 2350, 120, 0, 4, 'F');
-  cout << "E_tri = " << E_tri << endl;
+  tri_race *D_tri = new in_ch("C_H_1234", 1450, 4400, 2400, 130, 30, 5);
+  cout << "D_tri = " << D_tri << endl; // tri_race* !!!
+  tri_race *E_tri = new in_gr_ch("G_R_4321", 1500, 4450, 2350, 120, 0, 4, 'F');
+  cout << "E_tri = " << E_tri << endl; // tri_race* !!!
   mind1(alap);
   mind1(A_tri);
   mind1(B_tri);

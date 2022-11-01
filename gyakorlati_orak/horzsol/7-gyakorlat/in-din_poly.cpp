@@ -563,6 +563,7 @@ void mind1(tri_race *x_tri)
 void felsz(tri_race *x_tri)
 {
   delete x_tri;
+  x_tri = 0;
 }
 
 /********* main.cpp ************/
@@ -774,6 +775,7 @@ void felsz(tri_race *x_tri)
 {
   delete x_tri;
   cout << x_tri;
+  x_tri = 0;
 }
 
 /********* main.cpp ************/
