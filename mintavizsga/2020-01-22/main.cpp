@@ -1,11 +1,12 @@
 #include <iostream>
 
-#include "megoldas/csapo/lakokozosseg.h"
+//#include "megoldas/csapo/lakokozosseg.h"
+#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2020-01-22/megoldas_dani.hpp"
 
 #define SZINT_2 1
-#define SZINT_3 1
-#define SZINT_4 1
-#define SZINT_5 1
+#define SZINT_3 0
+#define SZINT_4 0
+#define SZINT_5 0
 
 int main()
 {
