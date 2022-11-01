@@ -67,7 +67,7 @@ public:
     }
 };
 
-class Kozgyules
+class Kozgyules : public Tarstulajdonos
 {
 protected:
     int ev;
@@ -111,7 +111,11 @@ public:
 
     void printJelenlevok()
     {
+        for (int i = 0; i < 5; i++) // Bekes
+        {
+            resztvevok[i]->print();
         }
+    }
 
     // Print
     void print()
