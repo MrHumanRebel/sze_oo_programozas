@@ -1,6 +1,6 @@
 // OOP Próba vizsgaZh
 
-#include "Decl.hpp"
+#include "/home/g14/uni/sze_oo_programozas/gyakorlati_orak/horzsol/9-gyakorlat/megoldas_dani.hpp"
 
 int main()
 {
@@ -48,12 +48,3 @@ int main()
 
     return 0;
 }
-
-/********* Decl.hpp ************/
-#include <iostream>
-
-using namespace std;
-
-...
-
-    /***********************************************************************************/

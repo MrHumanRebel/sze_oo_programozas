@@ -4,7 +4,7 @@
 #include <iostream>
 #include <type_traits>
 
-#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2021-12-14/megoldas_dani.hpp"
+#include "/home/g14/uni/sze_oo_programozas/mintavizsga/2021-12-14/megoldas_dani.hpp"
 //#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2021-12-14/megoldas/csapo/shapes.h"
 
 #define SZINT_2 1

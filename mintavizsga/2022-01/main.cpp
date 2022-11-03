@@ -4,7 +4,7 @@
 using namespace std;
 
 //#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dorian.hpp"
-#include "/home/szeke/projects/sze_oo_programozas/mintavizsga/2022-01/megoldas_dani.hpp"
+#include "/home/g14/uni/sze_oo_programozas/mintavizsga/2022-01/megoldas_dani.hpp"
 
 /* ####Kettesért####
 Keszitse el a "Sports(distance, time)", "Swimming(distance,time)", "Cycling(distance,time)", "Running(distance,time)" osztalyokat ugy, hogy az alabbi kod forduljon.
