@@ -111,42 +111,51 @@ public:
     }
 };
 
-/*
-void printNamesOfSports(Sports *sportname)
-{
-    cout << sportname->getNameOfSports() << endl;
-}
-*/
-
 void felszabadit(Sports *torol)
 {
     delete torol;
     torol = 0;
 }
 
-void printNamesOfSports(Sports *check)
+/*
+void printNamesOfSports(Sports *sportname) //Version 1
+{
+    cout << sportname->getNameOfSports() << endl;
+}
+*/
+
+/*
+void printNamesOfSports(Sports *check) // Version 2
+{
+    cout << endl;
+    check->getNameOfSports();
+    Sports *ptr = dynamic_cast<Sports *>(check);
+    if (ptr != nullptr)
+        cout << ptr->getNameOfSports();
+    else
+        cout << "Hiba!\n Nem gyerek osztály!" << endl;
+}
+*/
+
+void printNamesOfSports(Sports *check) // Version 3
 {
     cout << endl;
     check->getNameOfSports();
     Swimming *ptr = dynamic_cast<Swimming *>(check);
-    /*if (ptr != nullptr)
-    {
-        cout << "\nUnoka objektum vagyok: " << ptr->getNameOfSports() << endl;
-    }
-    else
-    {
-    cout << "\nNem vagyok unoka objektum!" << endl;
-    in_ch *ptr = dynamic_cast<Sports *>(check);
-    */
     if (ptr != nullptr)
-    {
         cout << ptr->getNameOfSports();
-    }
     else
     {
-        // cout << "\nNem vagyok gyerek objektum!" << endl;
-        Sports *ptr = dynamic_cast<Sports *>(check);
-        cout << ptr->getNameOfSports();
+        Cycling *ptr = dynamic_cast<Cycling *>(check);
+        if (ptr != nullptr)
+            cout << ptr->getNameOfSports();
+        else
+        {
+            Running *ptr = dynamic_cast<Running *>(check);
+            if (ptr != nullptr)
+                cout << ptr->getNameOfSports();
+            else
+                cout << "Hiba!\n Nem gyerek osztály!" << endl;
+        }
     }
-    //}
 }
