@@ -1,6 +1,6 @@
 // OOP Próba vizsgaZh
 
-#include "/home/g14/uni/sze_oo_programozas/gyakorlati_orak/horzsol/9-gyakorlat/megoldas_dani.hpp"
+#include "/home/g14/uni/sze_oo_programozas/gyakorlati_orak/horzsol/minta_vizsga_2/megoldas_dani.hpp"
 
 int main()
 {
