@@ -128,7 +128,7 @@ void printNamesOfSports(Sports *check)
 {
     cout << endl;
     check->getNameOfSports();
-    Swimming *rp = dynamic_cast<Swimming *>(check);
+    Swimming *ptr = dynamic_cast<Swimming *>(check);
     /*if (rp != nullptr)
     {
         cout << "\nUnoka objektum vagyok: " << rp->getLic() << endl;
@@ -138,15 +138,15 @@ void printNamesOfSports(Sports *check)
     cout << "\nNem vagyok unoka objektum!" << endl;
     in_ch *rp = dynamic_cast<in_ch *>(check);
     */
-    if (rp != nullptr)
+    if (ptr != nullptr)
     {
-        cout << rp->getNameOfSports();
+        cout << ptr->getNameOfSports();
     }
     else
     {
         // cout << "\nNem vagyok gyerek objektum!" << endl;
-        Sports *rp = dynamic_cast<Sports *>(check);
-        cout << rp->getNameOfSports();
+        Sports *ptr = dynamic_cast<Sports *>(check);
+        cout << ptr->getNameOfSports();
     }
     //}
 }
