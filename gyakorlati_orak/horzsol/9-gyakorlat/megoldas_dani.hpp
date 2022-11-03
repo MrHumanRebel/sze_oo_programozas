@@ -115,3 +115,9 @@ void printNamesOfSports(Sports *sportname)
 {
     cout << sportname->getNameOfSports() << endl;
 }
+
+void felszabadit(Sports *torol)
+{
+    delete torol;
+    torol = 0;
+}
