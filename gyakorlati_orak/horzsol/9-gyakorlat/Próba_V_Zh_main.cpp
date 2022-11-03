@@ -42,15 +42,9 @@ int main()
     // Kerekpar
     // Futas
 
-    felszabadit(sp1);
-    felszabadit(sp2);
-    felszabadit(sp3);
-
     delete sp1;
     delete sp2;
     delete sp3;
-
-    
 
     return 0;
 }

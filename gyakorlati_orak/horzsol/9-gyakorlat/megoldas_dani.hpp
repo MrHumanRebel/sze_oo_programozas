@@ -111,13 +111,42 @@ public:
     }
 };
 
+/*
 void printNamesOfSports(Sports *sportname)
 {
     cout << sportname->getNameOfSports() << endl;
 }
+*/
 
 void felszabadit(Sports *torol)
 {
     delete torol;
     torol = 0;
+}
+
+void printNamesOfSports(Sports *check)
+{
+    cout << endl;
+    check->getNameOfSports();
+    Swimming *rp = dynamic_cast<Swimming *>(check);
+    /*if (rp != nullptr)
+    {
+        cout << "\nUnoka objektum vagyok: " << rp->getLic() << endl;
+    }
+    else
+    {
+    cout << "\nNem vagyok unoka objektum!" << endl;
+    in_ch *rp = dynamic_cast<in_ch *>(check);
+    */
+    if (rp != nullptr)
+    {
+        cout << rp->getNameOfSports();
+    }
+    else
+    {
+        // cout << "\nNem vagyok gyerek objektum!" << endl;
+        Sports *rp = dynamic_cast<Sports *>(check);
+        cout << rp->getNameOfSports();
+    }
+    //}
 }
