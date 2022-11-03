@@ -13,11 +13,21 @@ protected:
     double distance;
 
 public:
-    virtual void computeSaveAndPrintAverage() = 0;
-    virtual string getNameOfSports() = 0;
+    Sports(int distance, int time)
+    {
+        this->distance = distance;
+        this->time = time;
+    }
+    Sports()
+    {
+        distance = 0;
+        time = 0;
+    }
     virtual ~Sports()
     {
     }
+    virtual void computeSaveAndPrintAverage() = 0;
+    virtual string getNameOfSports() = 0;
 };
 
 class Swimming : public Sports
@@ -26,15 +36,11 @@ private:
     double swimdata;
 
 public:
-    Swimming(int distance, int time)
+    Swimming(int distance, int time) : Sports(distance, time)
     {
-        this->distance = distance;
-        this->time = time;
     }
-    Swimming()
+    Swimming() : Sports(distance, time)
     {
-        distance = 0;
-        time = 0;
         swimdata = 0;
     }
     ~Swimming()
@@ -57,15 +63,11 @@ private:
     double cycldata;
 
 public:
-    Cycling(int distance, int time)
+    Cycling(int distance, int time) : Sports(distance, time)
     {
-        this->distance = distance;
-        this->time = time;
     }
-    Cycling()
+    Cycling() : Sports(distance, time)
     {
-        distance = 0;
-        time = 0;
         cycldata = 0;
     }
     ~Cycling()
@@ -88,15 +90,11 @@ private:
     double rundata;
 
 public:
-    Running(int distance, int time)
+    Running(int distance, int time) : Sports(distance, time)
     {
-        this->distance = distance;
-        this->time = time;
     }
-    Running()
+    Running() : Sports(distance, time)
     {
-        distance = 0;
-        time = 0;
         rundata = 0;
     }
     ~Running()
