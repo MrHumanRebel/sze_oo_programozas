@@ -136,7 +136,7 @@ void printNamesOfSports(Sports *check) // Version 2
         cout << "Hiba!\n Nem gyerek osztály!" << endl;
 }
 */
-
+/*
 void printNamesOfSports(Sports *check) // Version 3
 {
     cout << endl;
@@ -158,4 +158,28 @@ void printNamesOfSports(Sports *check) // Version 3
                 cout << "Hiba!\n Nem gyerek osztály!" << endl;
         }
     }
+}
+*/
+/*
+void printNamesOfSports(Sports *check) // Version 4
+{
+    cout << endl;
+    if (Swimming *swp = dynamic_cast<Swimming *>(check))
+        cout << "Uszas" << endl;
+    else if (Cycling *cp = dynamic_cast<Cycling *>(check))
+        cout << "Kerekpar" << endl;
+    else if (Running *runp = dynamic_cast<Running *>(check))
+        cout << "Futas" << endl;
+}
+*/
+
+void printNamesOfSports(Sports *check) // Version 5
+{
+    cout << endl;
+    if (Swimming *swp = dynamic_cast<Swimming *>(check))
+        cout << swp->getNameOfSports() << endl;
+    else if (Cycling *cp = dynamic_cast<Cycling *>(check))
+        cout << cp->getNameOfSports() << endl;
+    else if (Running *runp = dynamic_cast<Running *>(check))
+        cout << runp->getNameOfSports() << endl;
 }
