@@ -68,16 +68,17 @@ int main()
     Kovetelmenyek kovetelmenyek2 = {
         {Pfizer::GetInstance(), 2},
         {Sinovac::GetInstance(), 2}};
+    /*
+        BeutazasiSzabalyozas ketPfizer(kovetelmenyek1);
+        BeutazasiSzabalyozas ketBarmi(kovetelmenyek2);
 
-    BeutazasiSzabalyozas ketPfizer(kovetelmenyek1);
-    BeutazasiSzabalyozas ketBarmi(kovetelmenyek2);
-
-    if (ketPfizer.isKaranten(&oltasiig1))
-    {
-        std::cout << "Onnek sajnos nincs 2 pfizere..." << std::endl;
-    }
-    else
-    {
-        std::cout << "Jojjon, baratunk!" << std::endl;
-    }
+        if (ketPfizer.isKaranten(&oltasiig1))
+        {
+            std::cout << "Onnek sajnos nincs 2 pfizere..." << std::endl;
+        }
+        else
+        {
+            std::cout << "Jojjon, baratunk!" << std::endl;
+        }
+        */
 }
