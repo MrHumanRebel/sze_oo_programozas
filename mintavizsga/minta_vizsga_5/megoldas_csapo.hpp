@@ -45,6 +45,11 @@ enum class DeviceType
     Laptop
 };
 
+// Keszitsen el egy DeviceFactory nevu osztalyt, melynek egyetlen
+// publikus statikus fv-e van:
+// Device* NewDevice(const std::string&)
+// szignaturval
+
 class DeviceFactory
 {
 public:

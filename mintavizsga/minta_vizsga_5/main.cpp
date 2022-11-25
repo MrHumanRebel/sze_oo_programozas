@@ -1,7 +1,7 @@
 #include <type_traits>
 #include <string>
 #include <iostream>
-#include "/home/g14/uni/sze_oo_programozas/mintavizsga/minta_vizsga_5/megoldas_csapo.hpp"
+#include "/home/g14/uni/sze_oo_programozas/mintavizsga/minta_vizsga_5/megoldas_dani.hpp"
 
 // Keszitsen el 3 osztalyt: Device, Computer es Laptop
 // Device egy absztrakt ososztaly, melynek print() metodusa
