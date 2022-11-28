@@ -1,0 +1,1 @@
+[All C++ design patters](https://refactoring.guru/design-patterns/cpp)
