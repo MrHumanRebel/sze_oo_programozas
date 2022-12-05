@@ -28,25 +28,29 @@ public:
     virtual ~Sports()
     {
     }
-    virtual void computeSaveAndPrintAverage() = 0;
-    virtual string getNameOfSports() = 0;
-    virtual double getAverage() = 0;
+    virtual void computeSaveAndPrintAverage(){};
+    virtual string getNameOfSports(){};
+    virtual double getAverage(){};
 
     // Otos szint
     double getTime()
     {
         return time;
     }
+    double getDist()
+    {
+        return distance;
+    }
     Sports &operator+=(Sports &name) // Overloading += operator
     {
-        distance = distance + name.getAverage();
+        distance = distance + name.getDist();
         time = time + name.getTime();
         return *this;
     }
     void printTotal()
     {
-        cout << "\nA teljes táv: " << getAverage() << " [km]" << endl;
-        cout << "\nA cel ido: " << int(getAverage() / calc3) << ':' << int(getAverage()) % calc3 / calc0 << ':' << int(getAverage()) % calc3 % calc0 << "[h:m:s]" << endl;
+        cout << "\nA teljes táv: " << getDist() << " [km]" << endl;
+        cout << "\nA cel ido: " << int(getDist() / calc3) << ':' << int(getDist()) % calc3 / calc0 << ':' << int(getDist()) % calc3 % calc0 << "[h:m:s]" << endl;
     }
 };
 
