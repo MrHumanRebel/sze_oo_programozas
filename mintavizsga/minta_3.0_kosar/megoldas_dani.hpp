@@ -49,11 +49,12 @@ public:
         cout << "Kosar erteke: ";
         for (auto it = begin(kosartartalma); it != end(kosartartalma); ++it)
         {
-            double akt = it->getTotal();
-
+            double akt = 0.0;
+            // akt = it->getTotal(); //HELP!
             if (it != (end(kosartartalma)) - 1)
                 cout << akt << " + ";
-            
+            else
+                cout << akt;
             sum += akt;
         };
         cout << " = " << sum << endl;
