@@ -26,7 +26,7 @@ public:
 class Professzor : public Oktato
 {
 public:
-    Professzor() : Oktato(lastName, firstName)
+    Professzor(const string lastName, const string firstName) : Oktato(lastName, firstName)
     {
     }
     void print()
@@ -38,7 +38,7 @@ public:
 class Tanarseged : public Oktato
 {
 public:
-    Tanarseged() : Oktato(lastName, firstName)
+    Tanarseged(const string lastName, const string firstName) : Oktato(lastName, firstName)
     {
     }
     void print()

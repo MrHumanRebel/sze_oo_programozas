@@ -16,6 +16,10 @@ public:
     {
         this->nev = nev;
     }
+    Person()
+    {
+        nev = "";
+    }
     void notify(const string uzenet, Person ptr)
     {
         cout << nev << " megkapta " << ptr.nev << " uzenetet: " << uzenet << endl;
@@ -31,7 +35,10 @@ private:
     vector<Person *> feliratkozottak;
 
 public:
-    Mediator() //: Person(nev)
+    Mediator(const string nev) : Person(nev)
+    {
+    }
+    Mediator() : Person()
     {
     }
     void add(Person *ptr)
@@ -42,8 +49,10 @@ public:
     {
         for (auto it = begin(feliratkozottak); it != end(feliratkozottak); ++it)
         {
+            // cout << "A vector aktuális címe: " << *it << endl;
+            // cout << "A kapott aktuális cím: " << ptr << endl;
             if (*it != ptr)
-                ptr->notify(uzenet, *ptr);
+                ptr->notify(uzenet, **it); // Valahogy meg kellene fordítani
         };
     }
 };
