@@ -50,7 +50,7 @@ public:
         for (auto it = begin(kosartartalma); it != end(kosartartalma); ++it)
         {
             double akt = 0.0;
-            akt = (*it)->getTotal(); //HELP!
+            akt = (*it)->getTotal(); // Precedencia. A -> előbb hajtódik végre, mint a * vagyis a gép zárójelek nélkül azt látná, hogy *(it->getTotal())
             if (it != (end(kosartartalma)) - 1)
                 cout << akt << " + ";
             else
