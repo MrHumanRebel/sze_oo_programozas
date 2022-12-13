@@ -34,7 +34,7 @@ public:
     }
 };
 
-class Kosar : public Termek
+class Kosar
 {
     vector<Termek *> kosartartalma;
 
@@ -50,7 +50,7 @@ public:
         for (auto it = begin(kosartartalma); it != end(kosartartalma); ++it)
         {
             double akt = 0.0;
-            // akt = it->getTotal(); //HELP!
+            akt = it->getTotal(); //HELP!
             if (it != (end(kosartartalma)) - 1)
                 cout << akt << " + ";
             else
