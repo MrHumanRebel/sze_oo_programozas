@@ -22,7 +22,7 @@ public:
     }
     void notify(const string uzenet, Person ptr)
     {
-        cout << nev << " megkapta " << ptr.nev << " uzenetet: " << uzenet << endl;
+        cout << ptr.nev << " megkapta " << nev << " uzenetet: " << uzenet << endl;
     }
     virtual ~Person()
     {
@@ -52,7 +52,7 @@ public:
             // cout << "A vector aktuális címe: " << *it << endl;
             // cout << "A kapott aktuális cím: " << ptr << endl;
             if (*it != ptr)
-                ptr->notify(uzenet, **it); // Valahogy meg kellene fordítani
+                ptr->notify(uzenet, **it);
         };
     }
 };
