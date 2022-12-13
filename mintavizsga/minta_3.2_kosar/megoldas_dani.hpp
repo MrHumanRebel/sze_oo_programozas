@@ -52,7 +52,7 @@ public:
     {
         for (auto it = begin(kosartartalma); it != end(kosartartalma); ++it)
         {
-            cout << (*it)->getClassName() << endl;
+            // cout << (*it)->getClassName() << endl;
             if ((*it)->getClassName() == torol)
                 (*it)->setAr();
         };
@@ -76,6 +76,15 @@ public:
     string getClassName()
     {
         return "Kosar";
+    }
+    ~Kosar()
+    {
+        for (vector<Termek *>::reverse_iterator it = kosartartalma.rbegin();
+             it != kosartartalma.rend(); it++)
+        {
+            delete *it;
+            *it = 0;
+        }
     }
 };
 

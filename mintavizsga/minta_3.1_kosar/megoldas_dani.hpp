@@ -59,6 +59,15 @@ public:
         };
         cout << " = " << sum << endl;
     }
+    ~Kosar()
+    {
+        for (vector<Termek *>::reverse_iterator it = kosartartalma.rbegin();
+             it != kosartartalma.rend(); it++)
+        {
+            delete *it;
+            *it = 0;
+        }
+    }
 };
 
 class Barack : public Termek
