@@ -57,7 +57,7 @@ public:
             delete *it;
             *it = 0;
         }
-    }/*
+    }*/
 };
 
 class Leves : public EtlapElem

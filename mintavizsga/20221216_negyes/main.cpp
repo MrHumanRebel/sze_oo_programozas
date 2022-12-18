@@ -3,7 +3,7 @@
 #include <vector>
 #include <typeinfo>
 
-#include "dani.hpp"
+#include "megoldas_dani.hpp"
 
 int main()
 {
